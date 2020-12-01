@@ -3,10 +3,10 @@ Pre-processes the data for network analysis
 """
 
 import pandas as pd
-import numpy as np
-import re
-import email
-import itertools
+#import numpy as np
+#import re
+#import email
+#import itertools
 from utils import get_email_from_string, prep_dataframe, get_pairwise_communication
 
 # Load in data
@@ -22,7 +22,7 @@ print(df_parsed['X-Origin'].value_counts())
 # Subset emails in sent folders only
 sent = df.loc[df['file'].str.contains('sent')]
 
-# From sent subset extract and process emails of specific persons: 
+# From sent subset extract and process emails of specific persons:
 # Process emails of Kenneth Lay
 lay = sent.loc[sent['file'].str.contains('lay-k')]
 lay_parsed = pd.DataFrame(list(map(get_email_from_string, lay['message'])))

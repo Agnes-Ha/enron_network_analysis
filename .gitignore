@@ -1,11 +1,7 @@
 # Custom files
 
-notebooks
-models/*
-examples/data/*
+
 data/*
-!data/README.md
-!models/README.md
 
 .vscode/*
 
@@ -142,6 +138,3 @@ dmypy.json
 
 # Windows file extension
 :Zone.Identifier
-
-#Data
-data/

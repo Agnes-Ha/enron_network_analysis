@@ -2,11 +2,11 @@
 Helper functions for pre-processing data
 """
 
-import pandas as pd
-import numpy as np
 import re
 import email
 from itertools import chain
+import pandas as pd
+import numpy as np
 
 
 def get_user(df):
@@ -14,20 +14,20 @@ def get_user(df):
     Input:
         DataFrame
     Function:
-        Extracts the user account in the column 'file' of the DataFrame and 
-        appends it to a list. Appends this 
-        list as column 'user' to the dataframe and returns it.
+        Extracts the user account in the column 'file' of the DataFrame and
+        appends it to a list. Appends this list as column 'user' to the
+        dataframe and returns it.
     Output:
         DataFrame
     """
     file_split = []
-    
+
     for file in df['file']:
         split = file.rsplit('/')
         file_split.append(split[0])
-        
+    
     df['user'] = file_split
-        
+    
     return df
 
 
@@ -36,8 +36,8 @@ def get_email_from_string(raw_email):
     Input:
         String
     Function:
-        Extracts header and contant information from a string representing a 
-        MIME type email. Converts the header information to keys and the 
+        Extracts header and contant information from a string representing a
+        MIME type email. Converts the header information to keys and the
         respective content as values and returns a dictionary.
     Output:
         Dictionary
@@ -65,7 +65,7 @@ def prep_dataframe(df):
     Function:
         - Extracts columns "From", "To", "Cc" and "Bcc" from original DataFrame
           to a new DataFrame
-        - Merges columns "To", "Cc" and "Bcc" in new DataFrame to new column 
+        - Merges columns "To", "Cc" and "Bcc" in new DataFrame to new column
           "recipients"
         - Renames column "From" to "sender" in new DataFrame
         - Drops columns "To", "Cc" and "Bcc" from new DataFrame
@@ -93,14 +93,14 @@ def get_pairwise_communication(df_col1, df_col2):
     Input:
         DataFrame columns
     Function:
-        If recipient column contains multiple recipients, extracts individual 
-        recipients from recipient column 
-        and matches row-wise with respective sender. Returns a DataFrame.
+        If recipient column contains multiple recipients, extracts individual
+        recipients from recipient column and matches row-wise with respective
+        sender. Returns a DataFrame.
     Output:
         DataFrame
     """
 
-    result_df = pd.DataFrame({"sender": np.repeat(df_col1.values, 
+    result_df = pd.DataFrame({"sender": np.repeat(df_col1.values,
                             df_col2.str.len()),
                             "recipient": list(chain.from_iterable(df_col2))})
 

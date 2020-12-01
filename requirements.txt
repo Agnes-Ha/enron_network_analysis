@@ -1,0 +1,7 @@
+numpy
+mail-parser
+pandas
+plotly
+pandas
+networkx
+matplotlib
