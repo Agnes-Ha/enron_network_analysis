@@ -1,6 +1,6 @@
 # Custom files
 
-
+initial_data_exploration.ipynb
 data/*
 
 .vscode/*

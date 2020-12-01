@@ -23,7 +23,7 @@ nx.draw_networkx_edges(G_kam, layout_kam, edge_color='#AAAAAA')
 
 # create and draw sender nodes, sized according to their number of connections
 sender_kam = [node for node in G_kam.nodes() if node in
-            #kaminski_edges['sender'].unique()]
+            kaminski_edges['sender'].unique()]
 size_kam = [G_kam.degree(node) * 80 for node in G_kam.nodes() if node in
             kaminski_edges['sender'].unique()]
 nx.draw_networkx_nodes(G_kam, layout_kam, nodelist=sender_kam,

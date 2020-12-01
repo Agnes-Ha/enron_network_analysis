@@ -90,4 +90,3 @@ kaminski_edges = kaminski_sender.value_counts(['sender', 'recipient'])
 kaminski_edges = kaminski_edges.reset_index()
 kaminski_edges = kaminski_edges.rename(columns={0: 'num_emails'})
 kaminski_edges.to_csv('./data/kaminski_edges.csv', index=False)
-

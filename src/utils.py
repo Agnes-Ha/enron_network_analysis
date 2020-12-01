@@ -2,7 +2,7 @@
 Helper functions for pre-processing data
 """
 
-import re
+#import re
 import email
 from itertools import chain
 import pandas as pd
@@ -25,9 +25,9 @@ def get_user(df):
     for file in df['file']:
         split = file.rsplit('/')
         file_split.append(split[0])
-    
+
     df['user'] = file_split
-    
+
     return df
 
 
