@@ -15,8 +15,8 @@ df = pd.read_csv('./data/emails.csv')
 # Pre-process complete dataset
 df_parsed = pd.DataFrame(list(map(get_email_from_string, df['message'])))
 print(df_parsed.info())
-print(df_parsed.describe())
-print(df_parsed['X-Origin'].value_counts())
+#print(df_parsed.describe())
+#print(df_parsed['X-Origin'].value_counts())
 
 
 # Subset emails in sent folders only
@@ -26,6 +26,7 @@ sent = df.loc[df['file'].str.contains('sent')]
 # Process emails of Kenneth Lay
 lay = sent.loc[sent['file'].str.contains('lay-k')]
 lay_parsed = pd.DataFrame(list(map(get_email_from_string, lay['message'])))
+lay_parsed.to_csv('./data/lay_parsed.csv', index=False)
 
 lay_comm = prep_dataframe(lay_parsed)
 lay_comm['recipients'] = lay_comm['recipients'].apply(
@@ -49,6 +50,7 @@ lay_edges.to_csv('./data/lay_edges.csv', index=False)
 skilling = sent.loc[sent['file'].str.contains('skilling-j')]
 skilling_parsed = pd.DataFrame(
     list(map(get_email_from_string, skilling['message'])))
+skilling_parsed.to_csv('./data/skilling_parsed.csv', index=False)
 
 skilling_comm = prep_dataframe(skilling_parsed)
 skilling_comm['recipients'] = skilling_comm['recipients'].apply(
@@ -58,7 +60,7 @@ skilling_full = get_pairwise_communication(
     skilling_comm['sender'], skilling_comm['recipients'])
 skilling_full['recipient'] = skilling_full['recipient'].str.strip(' \n\t')
 
-print(skilling_full['sender'].unique())
+#print(skilling_full['sender'].unique())
 
 skilling_sender = skilling_full[skilling_full['sender'].str.contains(
     'jeff.skilling@enron.com')]
@@ -72,8 +74,9 @@ skilling_edges.to_csv('./data/skilling_edges.csv', index=False)
 kaminski = sent.loc[sent['file'].str.contains('kaminski-v')]
 kaminski_parsed = pd.DataFrame(
     list(map(get_email_from_string, kaminski['message'])))
+kaminski_parsed.to_csv('./data/kaminski_parsed.csv', index=False)
 
-print(kaminski_parsed.describe())
+#print(kaminski_parsed.describe())
 
 kaminski_comm = prep_dataframe(kaminski_parsed)
 kaminski_comm['recipients'] = kaminski_comm['recipients'].apply(

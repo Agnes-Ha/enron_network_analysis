@@ -2,7 +2,7 @@
 author: Spiced Academy
 title: Final Project Kickoff
 subtitle: Graduation @ Spiced Academy
-date: 2020-08-17
+date: 2020-12-04
 theme: moon # https://revealjs.com/themes/
 transition: fade # https://revealjs.com/transitions/
 # see all the options here: https://revealjs.com/config/
@@ -114,7 +114,7 @@ print(df.to_markdown())
 
 Picture 1             |  Picture 2
 :-------------------------:|:-------------------------:
-![](assets/coding.jpg)  |  ![](assets/coding.jpg)
+![](assets/coding.jpg) { width=40% } |  ![](assets/coding.jpg) { width=40% }
  
 <span class="smallfont">Photo by <a href="https://unsplash.com/@arifriyanto?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Arif Riyanto</a> on <a href="https://unsplash.com/s/photos/coding?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></span>
 
