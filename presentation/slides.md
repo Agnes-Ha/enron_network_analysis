@@ -1,7 +1,7 @@
 ---
-author: Spiced Academy
-title: Final Project Kickoff
-subtitle: Graduation @ Spiced Academy
+author: Agnes Hanko
+title: Network Analysis of Enron  
+subtitle: Final Project Presentation @ Spiced Academy
 date: 2020-12-04
 theme: moon # https://revealjs.com/themes/
 transition: fade # https://revealjs.com/transitions/

@@ -88,7 +88,13 @@ kaminski_full['recipient'] = kaminski_full['recipient'].str.strip(' \n\t')
 
 kaminski_sender = kaminski_full[kaminski_full['sender'].str.contains(
     'vince.kaminski.enron.com|j.kaminski@enron.com')]
+to_kaminski = kaminski_full[kaminski_full['recipient'].str.contains(
+    'vince.kaminski.enron.com|j.kaminski@enron.com')]
 
+to_kaminski_edges = to_kaminski.value_counts(['sender', 'recipient'])
+to_kaminski_edges = to_kaminski_edges.reset_index()
+to_kaminski_edges = to_kaminski_edges.rename(columns={0: 'num_emails'})
+to_kaminski_edges.to_csv('./data/to_kaminski_edges.csv', index=False)
 kaminski_edges = kaminski_sender.value_counts(['sender', 'recipient'])
 kaminski_edges = kaminski_edges.reset_index()
 kaminski_edges = kaminski_edges.rename(columns={0: 'num_emails'})
