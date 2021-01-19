@@ -51,7 +51,8 @@ def prep_dataframe(df):
 
     df_short = df[['From', 'To', 'Cc', 'Bcc']]
 
-    df_short['recipients'] = df_short[df_short.columns[1:]].apply(lambda x: ','.join(x.dropna()),axis=1)
+    df_short['recipients'] = df_short[df_short.columns[1:]].apply(
+        lambda x: ','.join(x.dropna()), axis=1)
 
     df_short = df_short.rename(columns={'From': 'sender',
                                         'X-Origin': 'email_account',
@@ -79,7 +80,7 @@ def get_pairwise_communication(df_col1, df_col2):
     """
 
     result_df = pd.DataFrame({"sender": np.repeat(df_col1.values,
-                            df_col2.str.len()),
-                            "recipient": list(chain.from_iterable(df_col2))})
+                                                  df_col2.str.len()),
+                              "recipient": list(chain.from_iterable(df_col2))})
 
     return result_df
