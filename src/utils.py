@@ -1,34 +1,10 @@
 """
 Helper functions for pre-processing data
 """
-
-#import re
 import email
 from itertools import chain
 import pandas as pd
 import numpy as np
-
-
-def get_user(df):
-    """
-    Input:
-        DataFrame
-    Function:
-        Extracts the user account in the column 'file' of the DataFrame and
-        appends it to a list. Appends this list as column 'user' to the
-        dataframe and returns it.
-    Output:
-        DataFrame
-    """
-    file_split = []
-
-    for file in df['file']:
-        split = file.rsplit('/')
-        file_split.append(split[0])
-
-    df['user'] = file_split
-
-    return df
 
 
 def get_email_from_string(raw_email):
@@ -75,15 +51,17 @@ def prep_dataframe(df):
 
     df_short = df[['From', 'To', 'Cc', 'Bcc']]
 
-    df_short['recipients'] = df_short[df_short.columns[1:]].apply(
-        lambda x: ','.join(x.dropna()),
-        axis=1)
+    df_short['recipients'] = df_short[df_short.columns[1:]].apply(lambda x: ','.join(x.dropna()),axis=1)
 
-    df_short = df_short.rename(columns={'From': 'sender'})
+    df_short = df_short.rename(columns={'From': 'sender',
+                                        'X-Origin': 'email_account',
+                                        'Date': 'date'})
 
     df_short.drop(columns=['To', 'Cc', 'Bcc'], inplace=True)
 
     df_short['recipients'].str.replace(' \n\t', '')
+
+    df_short = df_short[['sender', 'recipients']]
 
     return df_short
 

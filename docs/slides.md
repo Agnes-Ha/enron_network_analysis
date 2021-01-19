@@ -29,34 +29,34 @@ autoPlayMedia: true
 
 ## Project Structure
 
-![](assets/project_structure_v2.PNG){ width=80% }
+![](assets/project_structure.PNG){ width=80% }
 
 
 
 ## Network of Vincent Kaminski's Outgoing Emails
 
-![](assets/kaminski_network9.png){ width=60% }
+![](assets/kaminski_network.png){ width=60% }
 
 
 
 ## Top 10 Correspondents
 
 <div class="left"> Top 10 Correspondents
-![](assets/kaminski_network_top10_v10.png){ width=100% }
+![](assets/kaminski_network_top10.png){ width=100% }
 </div>
  
 <div class="right"> Top 10 Degree Centrality Scores
-![](assets/kaminski_centrality8.png){ width=100% }
+![](assets/kaminski_centrality.png){ width=100% }
 </div>
 
 ## Most Frequent Words in Close Network 
 
 <div class="left"> Top 10 Correspondents
-![](assets/kaminski_top10_wordcloud2.png){ width=100% }
+![](assets/kaminski_top10_wordcloud.png){ width=100% }
 </div>
  
 <div class="right"> Other Persons of Interest
-![](assets/kaminski_ls_wordcloud2.png){ width=100% }
+![](assets/kaminski_ls_wordcloud.png){ width=100% }
 </div>
 ---
 
