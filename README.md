@@ -14,10 +14,10 @@ The Enron corpus dataset used for this project is the Kaggle verion (source: htt
 Due to the size of the dataset, preliminary analysis focused on the largest e-mail account of the dataset from the employee Vincent J. Kaminski.
 
 ### Network of Vincent Kaminski's outgoing emails
-![](assets/kaminski_network.png){ width=60% }
+![](./assets/kaminski_network.png)
 
 ### Top 10 Correspondents
-![](assets/kaminski_network_top10.png){ width=100% }
+![](./assets/kaminski_network_top10.png)
 
 **Top 10 Degree Centrality Scores**
-![](assets/kaminski_centrality.png){ width=100% }
+![](./assets/kaminski_centrality.png)
