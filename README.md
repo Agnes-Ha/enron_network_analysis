@@ -1,3 +1,5 @@
+![Format python code](https://github.com/Agnes-Ha/enron_network_analysis/workflows/Format%20python%20code/badge.svg)
+
 # Enron Network Analysis
 
 Network analysis of the Enron e-mail corpus dataset using Networkx.
@@ -14,10 +16,10 @@ The Enron corpus dataset used for this project is the Kaggle verion (source: htt
 Due to the size of the dataset, preliminary analysis focused on the largest e-mail account of the dataset from the employee Vincent J. Kaminski.
 
 ### Network of Vincent Kaminski's outgoing emails
-![](./assets/kaminski_network.png)
+![](./docs/assets/kaminski_network.png?raw=true)
 
-### Top 10 Correspondents
-![](./assets/kaminski_network_top10.png)
+**Top 10 Correspondents**
+![](./docs/assets/kaminski_network_top10.png?raw=true)
 
 **Top 10 Degree Centrality Scores**
-![](./assets/kaminski_centrality.png)
+![](./docs/assets/kaminski_centrality.png?raw=true)
